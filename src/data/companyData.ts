@@ -1,5 +1,5 @@
-import openMouldHeroImgAsset from '../assets/images/injection_mould_press_open_1791345438856.jpg.asset.json';
-const openMouldHeroImg = openMouldHeroImgAsset.url;
+import heroMachineWorkingAsset from '../assets/images/hero-machine-working.jpg.asset.json';
+const openMouldHeroImg = heroMachineWorkingAsset.url;
 import heroInjectionMouldImgAsset from '../assets/images/hero_injection_moulding_1791344816956.jpg.asset.json';
 const heroInjectionMouldImg = heroInjectionMouldImgAsset.url;
 import haasVmcImgAsset from '../assets/images/haas_vmc_machining_1791344829999.jpg.asset.json';
