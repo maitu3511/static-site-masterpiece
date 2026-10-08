@@ -35,11 +35,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenQuote }) =
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
   const [activeProcessStep, setActiveProcessStep] = useState<number>(0);
   const [activeMachineryIndex, setActiveMachineryIndex] = useState<number>(0);
-  const [selectedIndustryId, setSelectedIndustryId] = useState<string>(INDUSTRIES[0].id);
+  const [selectedIndustryId, setSelectedIndustryId] = useState<string>(INDUSTRIES[0]?.id ?? '');
 
   const activeProcess = PROCESS_STAGES[activeProcessStep] || PROCESS_STAGES[0];
   const activeMachinery = INFRASTRUCTURE_HIGHLIGHTS[activeMachineryIndex] || INFRASTRUCTURE_HIGHLIGHTS[0];
   const activeIndustry = INDUSTRIES.find(ind => ind.id === selectedIndustryId) || INDUSTRIES[0];
+
+  if (!activeProcess || !activeMachinery || !activeIndustry) return null;
 
   const toggleFaq = (index: number) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);

@@ -132,11 +132,11 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                     Direct Phone Lines
                   </h3>
                   <div className="space-y-1 mt-1 text-sm font-bold text-[#0B2545]">
-                    <a href={`tel:${COMPANY_INFO.phones[0].raw}`} className="block hover:text-[#8B1E1E] transition-colors">
-                      {COMPANY_INFO.phones[0].label} (Engineering &amp; Sales)
+                    <a href={`tel:${COMPANY_INFO.phones[0]?.raw}`} className="block hover:text-[#8B1E1E] transition-colors">
+                      {COMPANY_INFO.phones[0]?.label} (Engineering &amp; Sales)
                     </a>
-                    <a href={`tel:${COMPANY_INFO.phones[1].raw}`} className="block hover:text-[#8B1E1E] transition-colors">
-                      {COMPANY_INFO.phones[1].label} (Toolroom Works)
+                    <a href={`tel:${COMPANY_INFO.phones[1]?.raw}`} className="block hover:text-[#8B1E1E] transition-colors">
+                      {COMPANY_INFO.phones[1]?.label} (Toolroom Works)
                     </a>
                   </div>
                 </div>

@@ -55,7 +55,7 @@ export const ReadyForProductionSection: React.FC<ReadyForProductionProps> = ({ o
 
             {/* Button 2: CONTACT PLANT (Smaller, sleek button) */}
             <a
-              href={`tel:${COMPANY_INFO.phones[0].raw}`}
+              href={`tel:${COMPANY_INFO.phones[0]?.raw}`}
               className="inline-flex items-center justify-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-lg bg-[#0B2545] hover:bg-[#081B33] text-white font-bold text-xs uppercase tracking-wider shadow-sm hover:shadow-md transform hover:-translate-y-0.5 transition-all cursor-pointer text-center w-full sm:w-auto min-w-[190px]"
             >
               <Phone className="w-3.5 h-3.5 text-white" />

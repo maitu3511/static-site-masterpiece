@@ -5,7 +5,7 @@ import { QuoteFormData } from '../types';
 interface QuoteModalProps {
   isOpen: boolean;
   onClose: () => void;
-  preselectedService?: string;
+  preselectedService?: string | undefined;
 }
 
 export const QuoteModal: React.FC<QuoteModalProps> = ({
@@ -39,16 +39,16 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
 
   const validate = () => {
     const errs: Record<string, string> = {};
-    if (!formData.name.trim()) errs.name = 'Please provide your full name';
-    if (!formData.company.trim()) errs.company = 'Please enter your company name';
+    if (!formData.name.trim()) errs['name'] = 'Please provide your full name';
+    if (!formData.company.trim()) errs['company'] = 'Please enter your company name';
     if (!formData.email.trim() || !/\S+@\S+\.\S+/.test(formData.email)) {
-      errs.email = 'Please provide a valid email address';
+      errs['email'] = 'Please provide a valid email address';
     }
     if (!formData.phone.trim() || formData.phone.length < 8) {
-      errs.phone = 'Please provide a valid contact number';
+      errs['phone'] = 'Please provide a valid contact number';
     }
     if (!formData.message.trim()) {
-      errs.message = 'Please provide brief details of your component or tooling requirements';
+      errs['message'] = 'Please provide brief details of your component or tooling requirements';
     }
     return errs;
   };
@@ -168,10 +168,10 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="e.g. Rahul Sharma"
                     className={`w-full px-4 py-2.5 rounded-xl border ${
-                      errors.name ? 'border-red-500 bg-red-50/30' : 'border-[#E8E1D3]'
+                      errors['name'] ? 'border-red-500 bg-red-50/30' : 'border-[#E8E1D3]'
                     } focus:outline-none focus:border-[#0B2545] text-sm text-[#0B2545]`}
                   />
-                  {errors.name && <p className="text-[11px] text-red-600 mt-1">{errors.name}</p>}
+                  {errors['name'] && <p className="text-[11px] text-red-600 mt-1">{errors['name']}</p>}
                 </div>
 
                 <div>
@@ -184,10 +184,10 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                     placeholder="e.g. Apex Auto Components"
                     className={`w-full px-4 py-2.5 rounded-xl border ${
-                      errors.company ? 'border-red-500 bg-red-50/30' : 'border-[#E8E1D3]'
+                      errors['company'] ? 'border-red-500 bg-red-50/30' : 'border-[#E8E1D3]'
                     } focus:outline-none focus:border-[#0B2545] text-sm text-[#0B2545]`}
                   />
-                  {errors.company && <p className="text-[11px] text-red-600 mt-1">{errors.company}</p>}
+                  {errors['company'] && <p className="text-[11px] text-red-600 mt-1">{errors['company']}</p>}
                 </div>
               </div>
 
@@ -202,10 +202,10 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="name@company.com"
                     className={`w-full px-4 py-2.5 rounded-xl border ${
-                      errors.email ? 'border-red-500 bg-red-50/30' : 'border-[#E8E1D3]'
+                      errors['email'] ? 'border-red-500 bg-red-50/30' : 'border-[#E8E1D3]'
                     } focus:outline-none focus:border-[#0B2545] text-sm text-[#0B2545]`}
                   />
-                  {errors.email && <p className="text-[11px] text-red-600 mt-1">{errors.email}</p>}
+                  {errors['email'] && <p className="text-[11px] text-red-600 mt-1">{errors['email']}</p>}
                 </div>
 
                 <div>
@@ -218,10 +218,10 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     placeholder="+91 98765 43210"
                     className={`w-full px-4 py-2.5 rounded-xl border ${
-                      errors.phone ? 'border-red-500 bg-red-50/30' : 'border-[#E8E1D3]'
+                      errors['phone'] ? 'border-red-500 bg-red-50/30' : 'border-[#E8E1D3]'
                     } focus:outline-none focus:border-[#0B2545] text-sm text-[#0B2545]`}
                   />
-                  {errors.phone && <p className="text-[11px] text-red-600 mt-1">{errors.phone}</p>}
+                  {errors['phone'] && <p className="text-[11px] text-red-600 mt-1">{errors['phone']}</p>}
                 </div>
               </div>
 
@@ -315,10 +315,10 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   placeholder="Mention target material (PA66, POM, ABS, etc.), part dimensions, number of cavities, special tolerances, or expected delivery milestones..."
                   className={`w-full px-4 py-2.5 rounded-xl border ${
-                    errors.message ? 'border-red-500 bg-red-50/30' : 'border-[#E8E1D3]'
+                    errors['message'] ? 'border-red-500 bg-red-50/30' : 'border-[#E8E1D3]'
                   } focus:outline-none focus:border-[#0B2545] text-sm text-[#0B2545] resize-none`}
                 />
-                {errors.message && <p className="text-[11px] text-red-600 mt-1">{errors.message}</p>}
+                {errors['message'] && <p className="text-[11px] text-red-600 mt-1">{errors['message']}</p>}
               </div>
 
               <div className="pt-2 flex items-center justify-between">

@@ -107,6 +107,7 @@ export const TestimonialsSection: React.FC = () => {
   };
 
   const current = TESTIMONIALS[currentIndex];
+  if (!current) return null;
 
   return (
     <section 

@@ -2,6 +2,7 @@ import React from 'react';
 import { PageId } from '../types';
 import { COMPANY_INFO } from '../data/companyData';
 import { Phone, Mail, MapPin } from 'lucide-react';
+import logoAsset from '../assets/branding/advay-engineers-logo.jpg.asset.json';
 
 interface FooterProps {
   onNavigate: (page: PageId) => void;
@@ -24,9 +25,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuote }) => {
           {/* Col 1: Brand, Tagline & Official Brand Color Socials */}
           <div>
             <div className="flex items-center gap-3 mb-3">
-              <div className="w-10 h-10 rounded-lg bg-[#0B2545] flex items-center justify-center font-bold text-[#FAF8F5] font-mono text-lg shadow-sm">
-                AE
-              </div>
+              <img src={logoAsset.url} alt="Advay Engineers logo" className="w-14 h-14 shrink-0 object-contain" />
               <div className="flex flex-col">
                 <span className="text-lg font-bold tracking-tight text-[#0B2545]">
                   {COMPANY_INFO.name}
@@ -177,11 +176,11 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuote }) => {
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-[#8B1E1E] shrink-0" />
                 <div className="text-xs flex flex-col">
-                  <a href={`tel:${COMPANY_INFO.phones[0].raw}`} className="hover:text-[#8B1E1E] transition-colors">
-                    {COMPANY_INFO.phones[0].label}
+                  <a href={`tel:${COMPANY_INFO.phones[0]?.raw}`} className="hover:text-[#8B1E1E] transition-colors">
+                    {COMPANY_INFO.phones[0]?.label}
                   </a>
-                  <a href={`tel:${COMPANY_INFO.phones[1].raw}`} className="hover:text-[#8B1E1E] transition-colors">
-                    {COMPANY_INFO.phones[1].label}
+                  <a href={`tel:${COMPANY_INFO.phones[1]?.raw}`} className="hover:text-[#8B1E1E] transition-colors">
+                    {COMPANY_INFO.phones[1]?.label}
                   </a>
                 </div>
               </div>

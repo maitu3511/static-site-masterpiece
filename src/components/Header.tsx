@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { PageId } from '../types';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
+import logoAsset from '../assets/branding/advay-engineers-logo.jpg.asset.json';
 
 interface HeaderProps {
   currentPage: PageId;
@@ -56,9 +57,7 @@ export const Header: React.FC<HeaderProps> = ({
             onClick={() => handleNavClick('home')}
             className="flex items-center gap-3 text-left focus:outline-none group cursor-pointer transition-transform duration-300 hover:scale-[1.02]"
           >
-            <div className="w-10 h-10 rounded-lg bg-[#0B2545] border border-[#081B33] flex items-center justify-center font-bold text-[#FAF8F5] group-hover:bg-[#8B1E1E] transition-colors shadow-sm">
-              <span className="font-mono text-xl tracking-tighter">AE</span>
-            </div>
+            <img src={logoAsset.url} alt="Advay Engineers logo" className="w-14 h-14 shrink-0 object-contain" />
             <div className="flex flex-col">
               <span className="text-xl font-bold tracking-tight text-[#0B2545] group-hover:text-[#8B1E1E] transition-colors whitespace-nowrap">
                 ADVAY ENGINEERS
